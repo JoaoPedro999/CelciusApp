@@ -12,9 +12,13 @@ export default function App() {
 
   const calcular = () => {
     const fahrenheitValue = (celsius * 9) / 5 + 32;
-    setFahrenheit(fahrenheitValue);
-    console.log(fahrenheitValue);
-    setModalVisible(true);
+    if (celsius === "") {
+      alert("Preencha todos os campos!");
+    } else {
+      setFahrenheit(fahrenheitValue);
+      console.log(fahrenheitValue);
+      setModalVisible(true);
+    }
   };
   const fechar = () => {
     setCelsius("");
@@ -32,7 +36,7 @@ export default function App() {
         placeholder={"Insira a temperatura"}
         value={celsius}
         onChangeText={setCelsius}
-        inputMode={numeric}
+        inputMode="numeric"
       />
       <BtnComponent onPress={calcular}>
         <TxtComponent styles={styles.btnText} texto={"Converter"} />
