@@ -1,29 +1,53 @@
-import { View } from "react-native";
+import React, { useState } from "react";
+import { View, Modal } from "react-native";
 import TxtComponent from "./src/Components/txtComponent";
 import InputComponent from "./src/Components/InputComponent";
 import BtnComponent from "./src/Components/btnComponent";
 import styles from "./src/Styles/styles";
 
 export default function App() {
-  const [celcius, setCelcius] = useState("");
+  const [celsius, setCelsius] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
-  const [farenheit, setFarenheit] = useState("");
+  const [fahrenheitValue, setFahrenheit] = useState("");
 
   const calcular = () => {
-    const celcius = parseFloat(celcius);
-    const farenheit = celsius * (9 / 5) + 32;
-    setFarenheit(Farenheit);
+    const fahrenheitValue = (celsius * 9) / 5 + 32;
+    setFahrenheit(fahrenheitValue);
+    console.log(fahrenheitValue);
     setModalVisible(true);
   };
+  const fechar = () => {
+    setCelsius("");
+    setModalVisible(false);
+  };
+
   return (
     <View style={styles.container}>
-      <TxtComponent texto={"CONVERSÃO CELCIUS - FARENHEIT"} />
-
-      <TxtComponent texto={"Graus Celcius (°C)"} />
-      <InputComponent placeholder={"Insira a temperatura"} />
-      <BtnComponent>
-        <TxtComponent texto={"Converter"} />
+      <TxtComponent
+        styles={styles.titulo}
+        texto={"CONVERSÃO CELSIUS - FAHRENHEIT"}
+      />
+      <TxtComponent styles={styles.texto} texto={"Graus Celsius (°C)"} />
+      <InputComponent
+        placeholder={"Insira a temperatura"}
+        value={celsius}
+        onChangeText={setCelsius}
+        inputMode={numeric}
+      />
+      <BtnComponent onPress={calcular}>
+        <TxtComponent styles={styles.btnText} texto={"Converter"} />
       </BtnComponent>
+      <Modal animationType="slide" transparent={true} visible={modalVisible}>
+        <View style={styles.modalcontainer}>
+          <TxtComponent
+            styles={styles.btnText}
+            texto={`É Equivalente a ${fahrenheitValue} Fahrenheit`}
+          />
+          <BtnComponent onPress={fechar}>
+            <TxtComponent styles={styles.btnText} texto={"fechar"} />
+          </BtnComponent>
+        </View>
+      </Modal>
     </View>
   );
 }
