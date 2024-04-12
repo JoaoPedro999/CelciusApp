@@ -17,5 +17,5 @@ Criar um aplicativo simples que converta a temperatura inserida pelo usuário de
 ============================================================================================<br>
 **Instruções**
 
-- No Console, inciciar a aplicação usando o comando *"npx expo start"*/*"npx expo start --tunnel"*
+- No Console, inciciar a aplicação usando o comando *"npx expo start"* ou *"npx expo start --tunnel"*
 - Abrir no Localhost:8081 ou no celular pelo expo go
