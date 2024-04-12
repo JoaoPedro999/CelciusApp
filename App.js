@@ -6,9 +6,9 @@ import BtnComponent from "./src/Components/btnComponent";
 import styles from "./src/Styles/styles";
 
 export default function App() {
-  const [celsius, setCelsius] = useState(""); // Estado para armazenar o valor em Celsius
-  const [modalVisible, setModalVisible] = useState(false); // Estado para controlar a visibilidade do modal
-  const [fahrenheitValue, setFahrenheit] = useState(""); // Estado para armazenar o valor convertido para Fahrenheit
+  const [celsius, setCelsius] = useState(""); // armazenar o valor em Celsius
+  const [modalVisible, setModalVisible] = useState(false); // controlar a visibilidade do modal
+  const [fahrenheitValue, setFahrenheit] = useState(""); // armazenar o valor convertido para Fahrenheit
 
   // Função para calcular o valor em Fahrenheit a partir do valor em Celsius
   const calcular = () => {
