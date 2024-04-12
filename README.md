@@ -14,7 +14,7 @@ Criar um aplicativo simples que converta a temperatura inserida pelo usuário de
     Aplicativo funcional que realiza a conversão de temperatura de Celsius para Fahrenheit, seguindo as instruções e critérios estabelecidos. 
     Código-fonte organizado e documentado.
 
-==========================================================================================================================
+============================================================================================
 **Instruções**
 
 - No Console, inciciar a aplicação usando o comando *"npx expo start"*/*"npx expo start --tunnel"*
